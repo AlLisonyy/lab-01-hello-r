@@ -1,19 +1,20 @@
 ---
-title: "Lab 01 - Hello R"
+title: "Lab 01 - AllisonLi"
 author: "Allison Li"
 date: "20250121"
 output: 
   html_document: 
-    fig_width: 6
-    fig_height: 7
+    highlight: zenburn
+    theme: cosmo
 ---
 
 ## Load packages and data
 
 ```{r load-packages, message=FALSE}
+options(repos = c(CRAN = "https://cloud.r-project.org"))
 install.packages("tidyverse")
 install.packages("datasauRus")
-library(tidyverse) 
+library(tidyverse)
 library(datasauRus)
 ```
 
@@ -97,6 +98,4 @@ datasaurus_dozen %>%
   summarize(r = cor(x, y)) %>%
   print(13)
 ```
-
-
 
