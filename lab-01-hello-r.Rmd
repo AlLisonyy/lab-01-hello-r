@@ -4,8 +4,8 @@ author: "Allison Li"
 date: "20250121"
 output: 
   html_document: 
-    fig_height: 4
-    fig_width: 9
+    fig_width: 6
+    fig_height: 7
 ---
 
 ## Load packages and data
@@ -25,7 +25,7 @@ There are 1846 rows and 3 variables. The variables are dataset, x, and y.
 
 ### Exercise 2
 
-```{r plot-dino, fig.height=3, fig.width=6}
+```{r plot-dino, fig.height=4, fig.width=5}
 dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
 
@@ -43,7 +43,7 @@ This nonlinear relationship has indicated a slightly negative correlation betwee
 
 ### Exercise 3
 
-```{r plot-star, fig.height=3, fig.width=6}
+```{r plot-star, fig.height=4, fig.width=5}
 star_data <- datasaurus_dozen %>%
   filter(dataset == "star")
 
@@ -64,7 +64,7 @@ the correlation for the star dataset is -.063. Although the r value is almost th
 
 Add your code and narrative to complete this exercise. Use the conventions from the previous exercises to name your chunks and organize your work.
 
-```{r plot-circle, fig.height=3, fig.width=6}
+```{r plot-circle, fig.height=5, fig.width=5}
 circle_data <- datasaurus_dozen %>%
   filter(dataset == "circle")
 
@@ -91,6 +91,7 @@ ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset)) +
   geom_point() +
   facet_wrap(~dataset, ncol = 3) +
   theme(legend.position = "none")
+
 datasaurus_dozen %>%
   group_by(dataset) %>%
   summarize(r = cor(x, y)) %>%
